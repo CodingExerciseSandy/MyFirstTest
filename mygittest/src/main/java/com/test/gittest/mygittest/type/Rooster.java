@@ -9,13 +9,4 @@ public class Rooster extends Bird{
 		super(singable, flyable);
 	}
 	
-	@Override
-	public void sing() {
-		singable.sing();
-	}
-	
-	@Override
-	public void fly() {
-		flyable.fly();
-	}
 }

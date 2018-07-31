@@ -9,12 +9,4 @@ public class Duck extends Bird{
 		super(singable, flyable);
 	}
 	
-	public void sing() {
-		singable.sing();
-	}
-	
-	public void walk() {
-		System.out.println("I am swimming");
-	}
-	
 }

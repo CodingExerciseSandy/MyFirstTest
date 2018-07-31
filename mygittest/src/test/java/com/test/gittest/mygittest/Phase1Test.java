@@ -1,12 +1,11 @@
 package com.test.gittest.mygittest;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.test.gittest.mygittest.base.Animal;
+import com.test.gittest.mygittest.base.Fly;
+import com.test.gittest.mygittest.base.Flyable;
+import com.test.gittest.mygittest.base.Sing;
 import com.test.gittest.mygittest.base.Singable;
 import com.test.gittest.mygittest.type.Bird;
 
@@ -19,19 +18,24 @@ public class Phase1Test extends TestCase
 {
 	
 	private Bird bird;
+	private Flyable flyable;
+	private Singable singable;
 	
 	@Test
     public void testIsBirdAnAnimal()
     {
-		
-    	bird = new Bird();
+		flyable = new Fly();
+		singable = new Sing();
+    	bird = new Bird(singable,flyable);
         assertTrue( bird instanceof Animal );
     }
     
 	@Test
     public void testCanBirdSing()
     {
-    	bird = new Bird();
+		flyable = new Fly();
+		singable = new Sing();
+    	bird = new Bird(singable,flyable);
         assertTrue( bird instanceof Singable );
     }
     
@@ -41,7 +45,9 @@ public class Phase1Test extends TestCase
 		System.out.println("\n");
 		System.out.println("Exercise 1 :: Testing");
 		
-		Bird bird = new Bird();
+		flyable = new Fly();
+		singable = new Sing();
+    	bird = new Bird(singable,flyable);
 		System.out.println("I am Bird");
 		bird.walk();
 		bird.fly();

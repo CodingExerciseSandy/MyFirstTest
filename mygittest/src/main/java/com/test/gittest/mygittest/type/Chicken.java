@@ -1,14 +1,21 @@
 package com.test.gittest.mygittest.type;
 
-public class Chicken extends Bird{
+import com.test.gittest.mygittest.base.Flyable;
+import com.test.gittest.mygittest.base.Singable;
 
+public class Chicken extends Bird{
+	
+	public Chicken(Singable singable, Flyable flyable) {
+		super(singable, flyable);
+	}
+	
 	@Override
 	public void sing() {
-		System.out.println("I am singing Cluck, cluck");
+		singable.sing();
 	}
 	
 	@Override
 	public void fly() {
-		System.out.println("I can't fly");
+		flyable.fly();
 	}
 }

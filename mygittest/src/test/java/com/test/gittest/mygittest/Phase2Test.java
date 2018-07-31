@@ -25,6 +25,7 @@ public class Phase2Test extends TestCase
 		System.out.println("Exercise 2 :: Testing");
 		
 		Bird duck = new Duck();
+		System.out.println("I am Duck");
 		duck.walk();
 		duck.fly();
 		duck.sing();
@@ -32,6 +33,7 @@ public class Phase2Test extends TestCase
 		System.out.println("\n");
 		
 		Bird chicken = new Chicken();
+		System.out.println("I am Chicken");
 		chicken.walk();
 		chicken.fly();
 		chicken.sing();

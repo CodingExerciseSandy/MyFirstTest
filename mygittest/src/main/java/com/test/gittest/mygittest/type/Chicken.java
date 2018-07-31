@@ -6,4 +6,9 @@ public class Chicken extends Bird{
 	public void sing() {
 		System.out.println("I am singing Cluck, cluck");
 	}
+	
+	@Override
+	public void fly() {
+		System.out.println("I can't fly");
+	}
 }

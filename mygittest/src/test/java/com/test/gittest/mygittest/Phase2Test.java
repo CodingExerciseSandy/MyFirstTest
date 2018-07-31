@@ -4,12 +4,15 @@ import org.junit.Test;
 
 import com.test.gittest.mygittest.base.Animal;
 import com.test.gittest.mygittest.base.CannotFly;
+import com.test.gittest.mygittest.base.CannotWalk;
 import com.test.gittest.mygittest.base.Cluck;
 import com.test.gittest.mygittest.base.Fly;
 import com.test.gittest.mygittest.base.Flyable;
 import com.test.gittest.mygittest.base.Quack;
 import com.test.gittest.mygittest.base.Sing;
 import com.test.gittest.mygittest.base.Singable;
+import com.test.gittest.mygittest.base.Walk;
+import com.test.gittest.mygittest.base.Walkable;
 import com.test.gittest.mygittest.type.Bird;
 import com.test.gittest.mygittest.type.Chicken;
 import com.test.gittest.mygittest.type.Duck;
@@ -25,6 +28,7 @@ public class Phase2Test extends TestCase
 	private Bird bird;
 	private Flyable flyable;
 	private Singable singable;
+	private Walkable walkable;
 	
 	@Test
     public void testSolution() {
@@ -35,7 +39,8 @@ public class Phase2Test extends TestCase
 		
 		flyable = new Fly();
 		singable = new Quack();
-		Bird duck = new Duck(singable, flyable);
+		walkable = new CannotWalk();
+		Bird duck = new Duck(singable, flyable, walkable);
 		System.out.println("I am Duck");
 		duck.walk();
 		duck.fly();
@@ -45,7 +50,8 @@ public class Phase2Test extends TestCase
 		
 		flyable = new CannotFly();
 		singable = new Cluck();
-		Bird chicken = new Chicken(singable, flyable);
+		walkable = new Walk();
+		Bird chicken = new Chicken(singable, flyable, walkable);
 		System.out.println("I am Chicken");
 		chicken.walk();
 		chicken.fly();
@@ -57,7 +63,8 @@ public class Phase2Test extends TestCase
     {
 		flyable = new Fly();
 		singable = new Sing();
-		Bird duck = new Duck(singable, flyable);
+		walkable = new CannotWalk();
+		Bird duck = new Duck(singable, flyable, walkable);
         assertTrue( duck instanceof Bird );
         assertTrue( duck instanceof Animal );
     }
@@ -67,7 +74,8 @@ public class Phase2Test extends TestCase
     {
 		flyable = new CannotFly();
 		singable = new Cluck();
-		Bird chicken = new Chicken(singable, flyable);
+		walkable = new Walk();
+		Bird chicken = new Chicken(singable, flyable, walkable);
         assertTrue( chicken instanceof Bird );
         assertTrue( chicken instanceof Animal );
     }

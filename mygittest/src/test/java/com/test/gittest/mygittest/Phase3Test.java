@@ -8,6 +8,8 @@ import com.test.gittest.mygittest.base.Cluck;
 import com.test.gittest.mygittest.base.CockADoodle;
 import com.test.gittest.mygittest.base.Flyable;
 import com.test.gittest.mygittest.base.Singable;
+import com.test.gittest.mygittest.base.Walk;
+import com.test.gittest.mygittest.base.Walkable;
 import com.test.gittest.mygittest.type.Bird;
 import com.test.gittest.mygittest.type.Chicken;
 import com.test.gittest.mygittest.type.Rooster;
@@ -23,6 +25,7 @@ public class Phase3Test extends TestCase
 	private Bird bird;
 	private Flyable flyable;
 	private Singable singable;
+	private Walkable walkable;
 	
 	@Test
     public void testSolution() {
@@ -33,7 +36,8 @@ public class Phase3Test extends TestCase
 
 		flyable = new CannotFly();
 		singable = new CockADoodle();
-		Bird rooster = new Rooster(singable, flyable);
+		walkable = new Walk();
+		Bird rooster = new Rooster(singable, flyable, walkable);
 		System.out.println("I am Rooster");
 		rooster.walk();
 		rooster.fly();
@@ -43,7 +47,8 @@ public class Phase3Test extends TestCase
 
 		flyable = new CannotFly();
 		singable = new Cluck();
-		Bird chicken = new Chicken(singable, flyable);
+		walkable = new Walk();
+		Bird chicken = new Chicken(singable, flyable, walkable);
 		System.out.println("I am Chicken");
 		chicken.walk();
 		chicken.fly();
@@ -55,7 +60,8 @@ public class Phase3Test extends TestCase
     {
 		flyable = new CannotFly();
 		singable = new CockADoodle();
-		Bird rooster = new Rooster(singable, flyable);
+		walkable = new Walk();
+		Bird rooster = new Rooster(singable, flyable, walkable);
         assertTrue( rooster instanceof Bird );
         assertTrue( rooster instanceof Animal );
     }

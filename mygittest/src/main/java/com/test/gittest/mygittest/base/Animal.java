@@ -11,6 +11,7 @@ public abstract class Animal {
 
 	protected Singable singable;
 	protected Flyable flyable;
+	protected Walkable walkable;
 	
 	public void fly() {
 		flyable.fly();
@@ -21,7 +22,7 @@ public abstract class Animal {
 	}
 	
 	public void walk() {
-		System.out.println("I am walking");
+		walkable.walk();
 	}
 	
 }

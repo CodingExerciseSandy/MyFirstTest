@@ -11,6 +11,7 @@ import com.test.gittest.mygittest.base.Flyable;
 import com.test.gittest.mygittest.base.Quack;
 import com.test.gittest.mygittest.base.Sing;
 import com.test.gittest.mygittest.base.Singable;
+import com.test.gittest.mygittest.base.Swimable;
 import com.test.gittest.mygittest.base.Walk;
 import com.test.gittest.mygittest.base.Walkable;
 import com.test.gittest.mygittest.type.Bird;
@@ -29,6 +30,7 @@ public class Phase2Test extends TestCase
 	private Flyable flyable;
 	private Singable singable;
 	private Walkable walkable;
+	private Swimable swimable;
 	
 	@Test
     public void testSolution() {
@@ -40,7 +42,7 @@ public class Phase2Test extends TestCase
 		flyable = new Fly();
 		singable = new Quack();
 		walkable = new CannotWalk();
-		Bird duck = new Duck(singable, flyable, walkable);
+		Bird duck = new Duck(singable, flyable, walkable, swimable);
 		System.out.println("I am Duck");
 		duck.walk();
 		duck.fly();
@@ -64,7 +66,7 @@ public class Phase2Test extends TestCase
 		flyable = new Fly();
 		singable = new Sing();
 		walkable = new CannotWalk();
-		Bird duck = new Duck(singable, flyable, walkable);
+		Bird duck = new Duck(singable, flyable, walkable, swimable);
         assertTrue( duck instanceof Bird );
         assertTrue( duck instanceof Animal );
     }

@@ -12,17 +12,21 @@ public abstract class Animal {
 	protected Singable singable;
 	protected Flyable flyable;
 	protected Walkable walkable;
+	protected Swimable swimable;
 	
-	public void fly() {
-		flyable.fly();
+	public Singable getSingable() {
+		return singable;
 	}
-
-	public void sing() {
-		singable.sing();
+	public Flyable getFlyable() {
+		return flyable;
+	}
+	public Walkable getWalkable() {
+		return walkable;
+	}
+	public Swimable getSwimable() {
+		return swimable;
 	}
 	
-	public void walk() {
-		walkable.walk();
-	}
+	
 	
 }

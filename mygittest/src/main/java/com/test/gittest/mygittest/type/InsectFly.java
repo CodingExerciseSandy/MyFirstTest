@@ -5,9 +5,9 @@ import com.test.gittest.mygittest.base.Flyable;
 import com.test.gittest.mygittest.base.Singable;
 import com.test.gittest.mygittest.base.Walkable;
 
-public class Bird extends Animal implements Singable, Flyable{
+public class InsectFly extends Animal {
 
-	public Bird(Singable singable, Flyable flyable, Walkable walkable) {
+	public InsectFly(Singable singable, Flyable flyable, Walkable walkable) {
 		this.flyable = flyable;
 		this.singable = singable;
 		this.walkable = walkable;
@@ -24,4 +24,5 @@ public class Bird extends Animal implements Singable, Flyable{
 	public void walk() {
 		walkable.walk();
 	}
+
 }
